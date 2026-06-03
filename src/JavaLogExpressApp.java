@@ -152,7 +152,7 @@ public class JavaLogExpressApp {
                             }
 
                             // Agora sim fechamos a linha com o frete e pulamos para a próxima (println)
-                            System.out.println(" | Frete Simulado: R$ " + veiculo.calcularCustoFrete(100));
+                            System.out.println(" | Frete Simulado: R$ %.2f" + veiculo.calcularCustoFrete(100));
                         }
                     }
                     break;

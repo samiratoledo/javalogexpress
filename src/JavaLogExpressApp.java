@@ -82,7 +82,7 @@ class Caminhao extends Veiculo {
 
     @Override
     public String getClasse() {
-        return classe = "Caminhâo";
+        return classe = "Caminhão";
     }
 }
 
@@ -142,12 +142,17 @@ public class JavaLogExpressApp {
                         // TODO: Percorrer a frota exibindo os dados e o cálculo do frete polimórfico
 
                         for (Veiculo veiculo : frota) {
-                            System.out.println("Veículo: " + veiculo.getClasse() + " | Placa: " + veiculo.getPlaca()
-                                    + " | Modelo: " + veiculo.getModelo() + " | Frete Simulado: R$"
-                                    + veiculo.calcularCustoFrete(100));
-                                    if (veiculo.equals("Caminhão")) {
-                                        System.out.println(" | Eixos: ");
-                                    }
+                            System.out.print("Veículo: " + veiculo.getClasse()
+                                    + " | Placa: " + veiculo.getPlaca()
+                                    + " | Modelo: " + veiculo.getModelo());
+
+                            if (veiculo.getClasse().equals("Caminhão")) {
+                                Caminhao cam = (Caminhao) veiculo; // Cast temporário seguro
+                                System.out.print(" | Eixos: " + cam.getEixos());
+                            }
+
+                            // Agora sim fechamos a linha com o frete e pulamos para a próxima (println)
+                            System.out.println(" | Frete Simulado: R$ " + veiculo.calcularCustoFrete(100));
                         }
                     }
                     break;
